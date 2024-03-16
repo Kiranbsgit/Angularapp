@@ -1,0 +1,39 @@
+.container{
+    border:2px solid blue;
+    text-align:center;
+    
+    height:500px;
+    width:400px;
+}
+.body{
+   background-image:url('https://cutewallpaper.org/21/circuit-wallpapers/Top-Super-HD-Circuit-Images-Wonderful-Collection.jpg'); ;
+   padding-top: 50px;
+   background-size:cover;
+   background-position: center;
+   display: flex;
+  margin-bottom: 0%;
+  
+}
+h1{
+    margin:auto;
+}
+.row{
+    height:90px;
+    width:396px;
+    background-color:paleturquoise;
+}
+.form-control{
+    font-size: 12px;
+    margin-top: auto;
+}
+.footer{
+    color: white;
+    font-size: 15px;
+    
+}
+.btn{
+    border-width: 5px;
+    font-size: 15px;
+    border-radius: 25px;
+    margin-bottom: 25px;
+}

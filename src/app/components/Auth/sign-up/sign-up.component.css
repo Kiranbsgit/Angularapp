@@ -1,0 +1,33 @@
+.body {
+   background-image: url('https://img.freepik.com/free-photo/digital-presentation-related-performance-business-using-graph_53876-98525.jpg?w=1060&t=st=1708330101~exp=1708330701~hmac=f7605e03fdf4b9e71b73b36da0994e206889b6e6815213b572fffbc6d3b124d0');
+   background-size:cover;
+   background-position: center;
+   display: flex;
+   padding-top: 50px;
+}
+
+*[role="form"] {
+   max-width: 530px;
+   padding: 15px;
+   margin: 0 auto;
+   border-radius: 0.3em;
+   background-color: #f2f2f2;
+}
+
+*[role="form"] h2 { 
+   font-family: 'Open Sans' , sans-serif;
+   font-size: 40px;
+   font-weight: 600;
+   color: #000000;
+   margin-top: 5%;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+}
+
+.form-horizontal{
+   font-style:normal;
+   font-size: small;
+}
+
+

@@ -1,0 +1,17 @@
+.btn{
+   padding-left:15px;
+   padding-right:15px;
+   color: black;
+   font-size: 15px;
+   background-color:rgb(187, 180, 207);
+   
+   
+}
+.model-dialog{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center; /* horizontal */
+align-items: center; /* vertical */
+}
