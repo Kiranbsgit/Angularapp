@@ -23,7 +23,7 @@ export class LoginComponent {
   // public loginForm!: FormGroup;
   
   
-  constructor(private router:Router,private tokenService:TokenService,private http:HttpClient){
+  constructor(private router:Router,private tokenService:TokenService,private http:HttpClient,private authService:AuthService){
     this.loginObj= new Login();
     this.errorMessage = '';
    
@@ -73,11 +73,26 @@ export class LoginComponent {
         // Redirect the user to the appropriate dashboard based on their role
         const userRole = res.role;
         if (userRole === 'admin') {
-          this.router.navigate(['/adminDashboard']);
+          // this.router.navigate(['/adminDashboard']);
+          // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          //   this.router.navigate(['/adminDashboard']);
+          // });
+
+          this.router.navigateByUrl('/adminDashboard').then(() => {
+           window.location.reload();
+          });
           alert("Logged in as Admin!!")
+       
         } 
         else if(userRole=='user') {
-          this.router.navigate(['/dashboard']);
+          // this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          //   this.router.navigate(['/dashboard']);
+          // });
+          // this.router.navigate(['/dashboard']);
+          this.router.navigateByUrl('/dashboard').then(() => {
+            window.location.reload();
+          });
+           
 
         }
 
@@ -93,6 +108,8 @@ export class LoginComponent {
      
       
     });
+   
+
 
   }
 }
