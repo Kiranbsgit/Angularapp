@@ -1,13 +1,57 @@
 .bg-image-vertical {
-    position: relative;
-    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
     background-repeat: no-repeat;
     background-position: right center;
-    background-size: auto 100%;
-    }
-    
-    @media (min-width: 1025px) {
+    background-size: cover; /* Adjust to cover the entire page */
+    background-position-y: bottom;
+}
+
+@media (min-width: 1025px) {
     .h-custom-2 {
-    height: 100%;
+        height: 100%;
     }
-    }
+}
+
+    /* background-color: rgb(175, 164, 164);
+    background-position: 100vh 0 100vh;
+    padding-top: 90px;
+    align-content: center;
+    padding-bottom: 170px;
+    padding-left: 100px;
+    margin: 0; /* Remove default margins */
+    /* font-size: medium;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    padding-right: 100px; */
+    
+.body{
+    margin-top: 0;
+     background-color: rgb(175, 164, 164);
+     background-size:cover;
+     height: 88.8vh;
+
+     padding-top: 10px;
+   
+}
+.card-body{
+    padding: 300px 0 40px;
+    margin-bottom: 0%;
+    background-color: #e9e9e5;
+    text-align: center;
+    padding-right: 1000px;
+    padding-top: 200px;
+  
+}
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 150px;
+    padding-right: px;
+   
+}

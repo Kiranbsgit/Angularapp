@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { AuthService } from './services/authservices/auth.service';
 import { LoginComponent } from './components/Auth/login/login.component';
 import { TokenService } from './services/tokenServices/token.service';
+import { UserService } from './services/userService/user.service';
 
 
 
@@ -45,7 +46,8 @@ const routes: Routes = [
   providers: [
     // Provide services here
      AuthService,
-     TokenService // Provide AuthService if needed
+     TokenService,// Provide AuthService if needed
+      UserService
   ],
   
   

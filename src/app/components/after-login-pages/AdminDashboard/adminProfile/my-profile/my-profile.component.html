@@ -1,0 +1,114 @@
+
+   <section class="body">
+    <div class="main-container">
+    <div class="container">
+    <div class="row">
+      <div class="col-md-5 toppad pull-right col-md-offset-3">
+        <!-- <a href="edit.html">Edit Profile</a>
+        <a href="edit.html">Logout</a> -->
+        <br>
+        <p class="text-info"></p>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{ user?.firstName + ' ' + user?.lastName }}</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-3 col-lg-3">
+                <img alt="User Pic" [src]="profileImage" class="img-circle img-responsive">
+              </div>
+              <!--  || 'https://c4.wallpaperflare.com/wallpaper/669/459/613/umbrella-corporation-resident-evil-eyes-movies-wallpaper-preview.jpg'" -->
+              <div class="col-md-9 col-lg-9">
+                <table class="table table-user-information">
+                  <tbody>
+                    <tr>
+                      <td class="field-label">  UserName:</td>
+                      <td class="field-value">{{ user?.userName }}</td>
+                    </tr>
+                    <tr>
+                      <td class="field-label">First Name:</td>
+                      <td class="field-value">{{ user?.firstName }}</td>
+                    </tr>
+                    <tr>
+                      <td class="field-label">Last Name:</td>
+                      <td class="field-value">{{ user?.lastName }}</td>
+                    </tr>
+                    <tr>
+                      <td class="field-label">Date of Birth:</td>
+                      <td class="field-value">{{ user?.dateOfBirth }}</td>
+                    </tr>
+                    <tr>
+                      <td class="field-label">Email:</td>
+                      <td class="field-value"><a href="mailto:{{ user?.email }}">{{ user?.email }}</a></td>
+                    </tr>
+                    <tr>
+                      <td class="field-label">Phone Number:</td>
+                      <td class="field-value">{{ user?.phoneNumber }}</td>
+                    </tr>
+                    <tr>
+                      <td class="field-label">Address:</td>
+                      <td class="field-value">{{ user?.address }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="panel-footer">
+            <div class="profile-controls">
+              <input type="file" (change)="onFileSelected($event)" accept="image/*">
+              <button (click)="onChangeProfile()">Change Profile Picture</button>
+              <button (click)="onDeleteProfile()">Delete Profile Picture</button>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+    var panels = $('.user-infos');
+    var panelsButton = $('.dropdown-user');
+    panels.hide();
+
+    //Click dropdown
+    panelsButton.click(function() {
+        //get data-for attribute
+        var dataFor = $(this).attr('data-for');
+        var idFor = $(dataFor);
+
+        //current button
+        var currentButton = $(this);
+        idFor.slideToggle(400, function() {
+            //Completed slidetoggle
+            if(idFor.is(':visible'))
+            {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-up text-muted"></i>');
+            }
+            else
+            {
+                currentButton.html('<i class="glyphicon glyphicon-chevron-down text-muted"></i>');
+            }
+        })
+    });
+
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $('button').click(function(e) {
+        e.preventDefault();
+        alert("This is a demo.\n :-)");
+    });
+});
+  </script>
+
+

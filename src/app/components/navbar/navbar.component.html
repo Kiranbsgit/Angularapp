@@ -1,43 +1,49 @@
+
+
 <nav class="navbar navbar-expand-lg navbar-light"  style="color: black;">
   <div class="container-fluid">
-    <p class="navbar-brand" >
+    <p class="navbar-brand" > <svg xmlns="http://www.w3.org/2000/svg" width="25" height="60" fill="White" class="bi bi-bank" viewBox="0 0 10 16">
+      <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.5.5 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72z"/>
+    </svg><i class="bi bi-bank"></i>
       Mydc Bank</p>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse " id="navbarNavDropdown">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
       <ul class="navbar-nav">
         <li class="nav-item"> 
-          <a class="nav-link  " routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/">Home</a>
+          <a class="nav-link  " routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/"><i class="fa fa-fw fa-home"></i>Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/about">About</a>
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/about"><i class="fa fa-fw fa-info-circle"></i>About</a>
         </li>
 
         <!-- this is dashboard page after login remove it later if not needed -->
         <li class="nav-item" *ngIf="userRole === 'user'">
           <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/dashboard">Dashboard</a>
         </li>
-        <li class="nav-item" *ngIf="userRole === 'admin'">
-          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/adminDashboard">Admin Dashboard</a>
+        <li class="nav-item" *ngIf="userRole === 'admin'"> 
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/adminDashboard"><i class="fa fa-fw fa-user-circle"></i>Admin Dashboard</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Customer Services
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" routerLinkActive="active" aria-current="true" [routerLinkActiveOptions]="{exact:true}" routerLink="/customerServices/contact">Contact Us</a></li>
-            <li><a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/customerServices/care">Customer Care</a></li>
-            <li><a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/customerServices/feedback">Feedback</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" aria-current="true" [routerLinkActiveOptions]="{exact:true}" routerLink="/customerServices/contact"><i class="fa fa-fw fa-envelope"></i>Contact Us</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/customerServices/care"><i class="fa fa-fw fa-phone"></i>Customer Care</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/customerServices/feedback"><i class="fa fa-fw fa-comments"></i>Feedback</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Login
+            <i class="fa fa-fw fa-user"></i>Login
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/login">User Login</a></li>
-            <li><a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/signUp">New User</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/login"><i class="fa fa-fw fa-user"></i>User Login</a></li>
+            <li><a class="dropdown-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/signUp"><i class="fa fa-fw fa-user-plus"></i>New User</a></li>
           </ul>
         </li>
       </ul>

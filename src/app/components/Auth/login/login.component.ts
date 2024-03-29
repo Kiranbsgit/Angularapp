@@ -55,6 +55,7 @@ export class LoginComponent {
         this.tokenService.setTokens({ accessToken: res.token.accessToken, refreshToken: res.token.refreshToken });
         // Set the user role
         this.tokenService.setUserRole(res.role);
+        this.tokenService.setCustomerID(res.customerID)
 
         
         alert("Login Successfull");

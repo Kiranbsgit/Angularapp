@@ -1,13 +1,74 @@
-<div>
-  Content for authenticated users
-   <div>
-  <p>dashboard works!</p>
-   </div>
-  
- 
-  <div>
-   <h1>Welcome to the User Dashboard!</h1>
-   <button (click)="logout()">Logout</button>
-   </div> >
 
-</div>
+<html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!DOCTYPE html>
+
+
+
+
+
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidenav">
+    <ul class="nav flex-column">  
+      <li class="nav-item">
+        <a class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"(click)="navigateToMyProfile()" aria-current="page">My Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="">Amin Actions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" aria-current="page" routerLink="">Create Account</a>
+      </li>
+      <button class="dropdown-btn">Dropdown 
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+      <!-- routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/" -->
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()" style="cursor: pointer;">Logout</a>
+      </li>
+      <!-- Add more navigation links as needed -->
+    </ul>
+  </div>
+
+  
+
+  <!-- Main content -->
+  <!-- <div class="container-fluid page">
+  
+      <app-create-account></app-create-account> -->
+<!--       
+  <! </div> -->
+  <div class="main">
+
+    <router-outlet></router-outlet>    
+    
+  </div> 
+
+  <!-- JavaScript dependencies (Bootstrap) -->
+  <script>
+    /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+    
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
+    </script>
+  
+</body>

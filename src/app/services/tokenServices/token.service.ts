@@ -8,6 +8,7 @@ export class TokenService {
   private readonly tokenKey = 'accessToken';
   private readonly refreshTokenKey = 'refreshToken';
   private readonly roleKey = 'userRole';
+  private readonly customerIDKey ='customerID';
 
   constructor() { }
 
@@ -41,4 +42,21 @@ export class TokenService {
   clearUserRole(): void {
     localStorage.removeItem(this.roleKey);
   }
+  // To fetch the CustomerId of an user
+  // setCustomerID(CustomerId:number):void{
+  //   localStorage.setItem(this.customerIDkey,)
+  // }
+  setCustomerID(customerID: number): void {
+    localStorage.setItem(this.customerIDKey, customerID.toString());
+  }
+
+  getCustomerID(): number | null {
+    const customerID = localStorage.getItem(this.customerIDKey);
+    return customerID ? parseInt(customerID, 10) : null;
+  }
+
+  clearCustomerID(): void {
+    localStorage.removeItem(this.customerIDKey);
+  }
+
 }
