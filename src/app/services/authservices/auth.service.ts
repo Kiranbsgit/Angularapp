@@ -31,6 +31,10 @@ export class AuthService {
   //   return of(true).pipe(delay(1000),tap(()=>LoginComponent.onLogin=true))
   // }
 
+  // CreateAcc(accObj:any){
+  //   return this.http.post<any>('https://localhost:7047/api/MyDCBank/createaccount',accObj)
+  // }
+
  
 
   // store the URL so we can redirect after logging in

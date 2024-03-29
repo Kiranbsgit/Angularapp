@@ -1,15 +1,15 @@
 <p>admin-dashboard works!</p>
 <div>
-    Content for authenticated users
-     <div>
-    <p>dashboard works!</p>
-     </div>
-    
-   
+
     <div>
      <h1>Welcome to the Admin Dashboard!</h1>
      <button (click)="logout()">Logout</button>
      </div> >
+
+
+     <li class="nav-item"> 
+        <a class="nav-link  " routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/createAccount">Create Account</a>
+      </li>
   
   </div>
   

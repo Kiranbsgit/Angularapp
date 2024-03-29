@@ -18,6 +18,9 @@ export class DashboardComponent {
   
   logout(): void {
     this.authService.logout();
+    
+     // Reload the current page
+     window.location.reload();
     this.tokenService.clearUserRole();
   }
 

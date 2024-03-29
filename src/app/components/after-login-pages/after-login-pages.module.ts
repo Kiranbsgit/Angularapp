@@ -8,17 +8,17 @@ import { LoginComponent } from '../Auth/login/login.component';
 import { AuthService } from '../../services/authservices/auth.service';
 import { AdminDashboardComponent } from './AdminDashboard/admin-dashboard/admin-dashboard.component';
 import { adminAuthGaurd } from '../../gaurds/admin-auth.guard';
+import { CreateAccountComponent } from './AdminDashboard/CreateAccount/create-account/create-account.component';
 
 
 
 
  export const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  // { path: '', redirectTo: '', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent, title:'Dashboard',canActivate: [authGuard], data: {requiredRole: 'user'}}, // Apply the canActivate property ( canActivate: [authGuard] )
-  {path:'adminDashboard', component:AdminDashboardComponent, title:'Admin - Dashboard',canActivate:[authGuard],
-  data: {
-    requiredRole: 'admin'} }
+  {path:'adminDashboard', component:AdminDashboardComponent, title:'Admin - Dashboard',canActivate:[authGuard], data: {requiredRole: 'admin'} },
+   {path:'createAccount',component:CreateAccountComponent,title:'Create Account', canActivate:[authGuard],data: {requiredRole: 'admin'}}
 ];
 
 @NgModule({

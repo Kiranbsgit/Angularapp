@@ -99,9 +99,9 @@ export class LoginComponent {
        
       }
       else{
-           console.error('Login failed:', res);
-           alert("Username or password is wrong!. Please try again")
-           this.errorMessage = 'Authentication failed: No token received from the server.';
+            console.error('Login failed:', res);
+            alert("Username or password is wrong!. Please try again")
+            this.errorMessage = 'Authentication failed: No token received from the server.';
           
         }
 

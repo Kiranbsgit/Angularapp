@@ -18,9 +18,10 @@ export const authGuard: CanActivateFn = (
     
     let isLoggedIn=localStorage.getItem('accessToken');
     if(!isLoggedIn){
-      alert ("Not authenticated!! Please login.");
+      // alert ("Not authenticated!! Please login.");
       router.navigate(['/login'])
       return false;
+     
     }
     const requiredRole = route.data['requiredRole'];
 
@@ -31,7 +32,7 @@ export const authGuard: CanActivateFn = (
       return false;
     }
   
-    
+     
   
     return true
   }
