@@ -10,6 +10,8 @@ import { AdminDashboardComponent } from './AdminDashboard/admin-dashboard/admin-
 import { adminAuthGaurd } from '../../gaurds/admin-auth.guard';
 import { CreateAccountComponent } from './AdminDashboard/CreateAccount/create-account/create-account.component';
 import { MyProfileComponent } from './AdminDashboard/adminProfile/my-profile/my-profile.component';
+import { AccountsComponent } from './dashboard/accounts/accounts.component';
+import { MyProfile1Component } from './dashboard/my-profile1/my-profile1.component';
 
 
 
@@ -17,7 +19,14 @@ import { MyProfileComponent } from './AdminDashboard/adminProfile/my-profile/my-
  export const routes: Routes = [
    { path: '', redirectTo: '', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent, title:'Dashboard',canActivate: [authGuard], data: {requiredRole: 'user'}}, // Apply the canActivate property ( canActivate: [authGuard] )
+  { path: 'dashboard', component: DashboardComponent, title:'Dashboard',canActivate: [authGuard], data: {requiredRole: 'user'},
+  children:[
+    { path: '', redirectTo: 'myProfile1', pathMatch: 'full' }, 
+    {path:'myProfile1',component:MyProfile1Component,title:'My Profile',canActivate:[authGuard],data: {requiredRole: 'user'}},
+    {path:'accounts',component:AccountsComponent,title:'Accounts',canActivate:[authGuard],data: {requiredRole: 'user'}}
+    
+  ]
+}, // Apply the canActivate property ( canActivate: [authGuard] )
   {path:'adminDashboard', component:AdminDashboardComponent, title:'Admin - Dashboard',canActivate:[authGuard], data: {requiredRole: 'admin'}, 
     children:[
       { path: '', redirectTo: 'myProfile', pathMatch: 'full' }, 

@@ -17,19 +17,14 @@
         <a class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"(click)="navigateToMyProfile()" aria-current="page">My Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">Amin Actions</a>
+        <a class="nav-link"  [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" aria-current="page" routerLink="/dashboard/accounts">Account</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link"  [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" aria-current="page" routerLink="">Create Account</a>
-      </li>
-      <button class="dropdown-btn">Dropdown 
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
+      
+      <div class="dropdown-container">
+        <a href="#">Link 1</a>
+       <a href="#">Link 2</a>
+       <a href="#">Link 3</a>
+       </div>
       <!-- routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/" -->
       <li class="nav-item">
         <a class="nav-link" (click)="logout()" style="cursor: pointer;">Logout</a>

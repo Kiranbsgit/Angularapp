@@ -22,7 +22,7 @@
 
         <!-- this is dashboard page after login remove it later if not needed -->
         <li class="nav-item" *ngIf="userRole === 'user'">
-          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/dashboard">Dashboard</a>
+          <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/dashboard"><i class="fa fa-fw fa-user-circle"></i>Dashboard</a>
         </li>
         <li class="nav-item" *ngIf="userRole === 'admin'"> 
           <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/adminDashboard"><i class="fa fa-fw fa-user-circle"></i>Admin Dashboard</a>

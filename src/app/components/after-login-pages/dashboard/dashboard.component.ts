@@ -30,7 +30,7 @@ export class DashboardComponent {
   }
   navigateToMyProfile(): void {
     // Navigate to the My Profile component
-    this.router.navigateByUrl('/adminDashboard/myProfile');
+    this.router.navigateByUrl('/dashboard/myProfile1');
   } 
 
     

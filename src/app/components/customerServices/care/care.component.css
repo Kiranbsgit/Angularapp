@@ -1,0 +1,97 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+  }
+  
+  header {
+    background-color: #042445;
+    color: #a50810;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  main {
+    padding: 20px 0;
+  }
+  
+  section {
+    margin-bottom: 40px;
+  }
+  
+  /* Contact Information Section */
+  .section-title {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .contact-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-info ul li {
+    margin-bottom: 10px;
+  }
+  
+  .contact-info ul li strong {
+    font-weight: bold;
+  }
+  
+  /* Get in Touch Section */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #5385b7;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .section-title {
+      font-size: 20px;
+    }
+  }
+  
