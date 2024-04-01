@@ -6,7 +6,7 @@
     width:400px;
 }
 .body {
-    background-image: url('https://c0.wallpaperflare.com/preview/1020/769/213/computer-light-unsplash-website.jpg');
+    background-image: url('https://t3.ftcdn.net/jpg/06/74/64/08/240_F_674640849_yudZp8yXIMXGsC8NRgi0Bo7DibU4aMDq.jpg');
     background-size:cover;
     background-position: center;
     display: flex;
@@ -21,6 +21,7 @@ h1{
 .row{
     height:90px;
     width:396px;
+    color: rgb(73, 72, 72);
     
 }
 .form-control{

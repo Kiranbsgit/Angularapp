@@ -9,9 +9,9 @@
 <body>
   <header class="header">
     <div class="container">
-      <a href="#" class="logo">
+      <!-- <a href="#" class="logo">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQStsoQBwtuAx_xF7o7J7KuRNH10QmJGKhGqWJDNGRCt7XQV7x8_0YebHyPuBNfVq-XpI&usqp=CAU" alt="Secure Bank Logo">
-      </a>
+      </a> -->
       <h1>My Account</h1>
     </div>
   </header>
@@ -20,16 +20,40 @@
     <div class="container">
 
       <section class="content">
-        <h2>Welcome, Akshat</h2>
-        <div class="account-details">
-          <p><strong>Account Number:</strong> 123456789</p>
-          <p><strong>Account ID:</strong> ABC123</p>
-          <p><strong>Account Name:</strong> Checking Account</p>
-          <p><strong>Account Type:</strong> Checking</p>
+        <div *ngIf="accounts.length === 0">
+          <div class="no-accounts-message">
+            <h2>No accounts found!</h2>
+            <p>Please contact the nearest MyDCBank branch to get your account created.</p>
+          </div>
         </div>
+        <!-- Welcome message with data binding -->
+        <div *ngIf="accounts.length > 0">
+          <!-- Dropdown to select an account -->
+          <span style="padding-left: 20px; padding-right: 10px;">Select your Account</span>
+          <select [(ngModel)]="selectedAccount" (change)="onSelectChange($event)" style="background-color: rgb(194, 194, 198);width: 20px;padding-right: 25px;" >
+            
+            <option *ngFor="let account of accounts" [value]="account.accountID">
+              {{ account.accountID }}
+            </option>
+            
+          </select>
+          <span style="padding-left: 20px;"> AccountID: {{selectedAccount?.accountID}}</span>
+          <!-- Display selected account details -->
+          <div *ngIf="selectedAccount">
+            <h2> <span style="font-size: 20px;">Hello!</span><span class="uppercase">  {{ selectedAccount.accountName }}</span></h2>
+            <div class="account-details">
+              <p><strong>Account Number:</strong> {{ selectedAccount.accountNumber }}</p>
+              <p><strong>Account ID:</strong> {{ selectedAccount.accountID }}</p>
+              <p><strong>Account Name:</strong> {{ selectedAccount.accountName }}</p>
+              <p><strong>Account Type:</strong> {{ selectedAccount.accountType }}</p>
+              <!-- Add more account details as needed -->
+            </div>
+          </div>
+          </div>
+
 
         <h3  class="underline">Recent Transactions</h3>
-        <div class="transaction-list">
+         <div class="transaction-list">
           <table>
             <thead>
               <tr>
@@ -56,8 +80,8 @@
               </tr>
               <!-- Add more transaction rows as needed -->
             </tbody>
-          </table>
-        </div>
+           </table>
+          </div>
 
         <a href="#" class="button">View All Transactions</a>
       </section>

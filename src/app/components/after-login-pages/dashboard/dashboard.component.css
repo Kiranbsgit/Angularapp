@@ -22,7 +22,7 @@ body {
    width: 200px; /* Adjust sidebar width as needed */
    padding: 20px;
    overflow-y: auto;
-   background-color: #5354562b;
+   background-color: #4b6baacf;
    font-size: medium;
 }
 
@@ -44,7 +44,7 @@ body {
    z-index: 1;
    top: 60px;
    left: 0;
-   background-color: #130404;
+   background-color: #03034d;
    overflow-x: hidden;
    padding-top: 45px;
  }

@@ -2,6 +2,20 @@
     <div class="container-fluid py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          
+          <div class="form-outline mb-4">
+            <input type="text" id="userName" class="form-control form-control-lg" [(ngModel)]="findUser.userName" placeholder="Enter UserName to fetch CustomerID" required />
+            <label class="form-label" for="userName">Username</label>
+          </div>
+          
+          <div class="form-outline mb-4" *ngIf="fetchedCustomerId !== undefined">
+            <input type="text" id="customerId" class="form-control form-control-lg" [(ngModel)]="fetchedCustomerId" disabled />
+            <label class="form-label" for="customerId">Customer ID</label>
+          </div>
+          
+          <!-- Button to Fetch Customer ID -->
+          <button type="button" class="fetch btn-primary btn-lg" (click)="fetchCustomerId()">Fetch</button>
+  
           <div class="card shadow-2-strong" style="border-radius: 1rem;">
             <div class="card-body p-5 text-center">
   

@@ -12,10 +12,11 @@
       padding: 0 20px;
     }
     .header {
-      background-color: #1365ae;
+      background-color:#084182;
       color: #fff;
-      padding: 20px 0;
+      padding: -30px 0;
       text-align: center;
+      
     }
     .logo img {
       width: 115px;
@@ -36,7 +37,8 @@
     }
     .account-details p {
       margin: 10px 0;
-      font-size: 18px;
+      font-size: 13px;
+      color: #1b1818;
     }
     .transaction-list table {
       width: 100%;
@@ -69,7 +71,7 @@
       background-color: #0056b3;
     }
     .footer {
-      background-color: hwb(220 16% 44% / 0.944);
+      background-color:  #5385b7;
       color: #fff;
       padding: 10px 0;
       text-align: center;
@@ -81,4 +83,15 @@
       display: inline-block;
       padding-bottom: 5px; /* Adjust as needed */
       color: rgb(81, 107, 155);
+    }
+    select {
+      
+      width: 55px;
+      height: 25px;
+  
+    }
+    .uppercase {
+      text-transform: uppercase;
+      font-size: 
+      px
     }

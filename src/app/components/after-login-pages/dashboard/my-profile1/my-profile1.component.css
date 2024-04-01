@@ -16,7 +16,7 @@
     height: 89.9vh;
 
     padding-top: 10px;
-    background-color: rgb(55, 52, 52);
+    background-color: rgb(227, 230, 232);
 
 
    
@@ -24,20 +24,19 @@
 }
   
 .panel-heading {
-    background-color: #2b2b2ccb;
+    background-color: #0b4b8a;
     color: #f6f2f2;
     padding-top: 20px;
 }
 .panel{
     width: 1000px;
     max-height: fit-content;
-    
-    background-color: rgb(210, 208, 208);
+  
   
 }
 .panel-footer{
-    color: rgb(117, 123, 123);
-    background-color: #eeeef7;
+    color: rgb(94, 99, 99);
+    background-color: #4876b5;
 }
   
 .panel-title {
@@ -94,7 +93,7 @@
     color: #aca3a3;
 }
 .table{
-    color:rgb(20, 20, 21);
+    color:rgb(79, 79, 181);
     font-weight: bold;
     font-size: larger;
     
@@ -128,6 +127,14 @@
    padding-right: 150px;
    margin-top: 0px;
   
+  }
+
+  .capitalize {
+    text-transform: capitalize;
+    font-size:20px
+  }
+  .uppercase{
+    text-transform: uppercase;
   }
 
 

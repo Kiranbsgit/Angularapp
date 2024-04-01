@@ -24,6 +24,10 @@
 			     </div><br />
             
               <button type="button" class="btn btn-success"(click)="onLogin()"><span class="glyphicon glyphicon-off"></span> Login</button>
+			  <!-- Display error message if exists -->
+			  <div class="error-message" style="color: rgb(238, 41, 10);" *ngIf="errorMessage">
+				{{ errorMessage }}
+			  </div>
               <div class="footer">
                   <p>Don't have an Account! <a href="/signUp">Sign Up Here</a></p>
           <p> <a href="#"> Forgot password?</a></p>

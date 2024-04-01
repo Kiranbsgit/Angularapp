@@ -2,15 +2,16 @@ import { Component } from '@angular/core';
 import { AppComponent } from '../../../app.component';
 import { FormsModule } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpErrorResponse } from '@angular/common/http';
 import { TokenService } from '../../../services/tokenServices/token.service';
 import { AuthService } from '../../../services/authservices/auth.service';
 import { Observable, delay, of, tap } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [AppComponent,FormsModule,FormsModule,HttpClientModule],
+  imports: [AppComponent,FormsModule,FormsModule,HttpClientModule,CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -56,7 +57,7 @@ export class LoginComponent {
         // Set the user role
         this.tokenService.setUserRole(res.role);
         this.tokenService.setCustomerID(res.customerID)
-
+           debugger
         
         alert("Login Successfull");
         //navigate url
@@ -100,12 +101,18 @@ export class LoginComponent {
        
       }
       else{
-            console.error('Login failed:', res);
-            alert("Username or password is wrong!. Please try again")
-            this.errorMessage = 'Authentication failed: No token received from the server.';
-          
-        }
-
+      
+        console.error('Login failed:', res);
+        // Handle login failure and display error message
+        this.errorMessage = 'An error occurred while logging in.';
+      }
+    }, (error: HttpErrorResponse) => {
+      console.error('Login API Error:', error);
+      if (error.error && error.error.message) {
+        this.errorMessage = error.error.message;
+      } else {
+        this.errorMessage = 'An error occurred while communicating with the server.';
+      }
      
       
     });

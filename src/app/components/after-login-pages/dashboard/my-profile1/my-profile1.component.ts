@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
 import { CustomerViewModel } from '../../../../Models/CustomerViewModel';
 import { HttpClient } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-my-profile',
   standalone: true,
   imports: [],
   templateUrl: './my-profile1.component.html',
-  styleUrl: './my-profile1.component.css'
+  styleUrl: './my-profile1.component.css',
+  providers:[DatePipe]
 })
 export class MyProfile1Component {
   user: CustomerViewModel | undefined;

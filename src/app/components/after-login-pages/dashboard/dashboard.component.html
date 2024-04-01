@@ -14,7 +14,7 @@
   <div class="sidenav">
     <ul class="nav flex-column">  
       <li class="nav-item">
-        <a class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"(click)="navigateToMyProfile()" aria-current="page">My Profile</a>
+        <a class="nav-link active" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"(click)="navigateToMyProfile()" aria-current="page">My Profile<i class="fa fa-fw fa-user" aria-hidden="true"></i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link"  [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" aria-current="page" routerLink="/dashboard/accounts">Account</a>
@@ -27,7 +27,7 @@
        </div>
       <!-- routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  aria-current="page" routerLink="/" -->
       <li class="nav-item">
-        <a class="nav-link" (click)="logout()" style="cursor: pointer;">Logout</a>
+        <a class="nav-link" (click)="logout()" style="cursor: pointer;">Logout  <i class="fa fa-fw fa-sign-out" aria-hidden="true"></i></a>
       </li>
       <!-- Add more navigation links as needed -->
     </ul>
