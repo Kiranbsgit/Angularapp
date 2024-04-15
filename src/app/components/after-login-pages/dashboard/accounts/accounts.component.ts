@@ -3,6 +3,7 @@ import { AccountViewModel } from '../../../../Models/AccountsViewModel';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../../../../environments/environment';
 
 
 @Component({
@@ -39,7 +40,7 @@ export class AccountsComponent implements OnInit {
 
   fetchUserDetails(customerID: number): void {
     // Make HTTP request to fetch user details from API
-    this.http.get<AccountViewModel[]>(`https://localhost:7047/api/RepositoryServices/Account?CustomerID=${customerID}`).subscribe(
+    this.http.get<AccountViewModel[]>(`${environment.apiUrl}api/RepositoryServices/Account?CustomerID=${customerID}`).subscribe(
       (data: AccountViewModel[]) => {
         // Sort the accounts by accountID
         this.accounts = data.sort((a, b) => a.accountID - b.accountID);

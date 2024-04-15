@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router, RouterOutlet } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-sign-up',
@@ -44,7 +45,7 @@ import { DatePipe } from '@angular/common';
     }
 
     if (this.validateForm()){
-    this.http.post('https://localhost:7047/api/mydcbank/user/register',this.signUpObj).subscribe(
+    this.http.post(`${environment.apiUrl}api/mydcbank/user/register`,this.signUpObj).subscribe(
       (res:any)=>{
         console.log('Signup successful:', res);
         alert("SignUp Successfull");

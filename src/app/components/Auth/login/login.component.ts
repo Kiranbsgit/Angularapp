@@ -8,6 +8,11 @@ import { AuthService } from '../../../services/authservices/auth.service';
 import { Observable, delay, of, tap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
+import { environment } from '../../../../environments/environment';
+
+
+
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -47,8 +52,8 @@ export class LoginComponent {
     // if (this.loginForm.valid) {
     //   console.log(this.loginForm.value);
       
-   
-    this.http.post<any>('https://localhost:7047/api/mydcbank/user/login',this.loginObj).pipe(
+   debugger
+    this.http.post<any>(`${environment.apiUrl}api/mydcbank/user/login`,this.loginObj).pipe(
       delay(100)).subscribe((res:any)=>{
        if(res  && res.token.accessToken){
         console.log('Login Successful. Access token:', res.token.accessToken);

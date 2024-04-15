@@ -4,10 +4,12 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: rgb(253, 248, 248);
   }
   
   .container {
     width: 80%;
+
     margin: auto;
   }
   
@@ -24,6 +26,7 @@ body {
   
   section {
     margin-bottom: 40px;
+    
   }
   
   /* Contact Information Section */
@@ -86,6 +89,7 @@ body {
   @media (max-width: 768px) {
     .container {
       width: 90%;
+      background-color: rgb(253, 248, 248); 
     }
   }
   

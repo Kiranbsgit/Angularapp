@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { FindUser } from '../../../../../Models/FindUserViewModle';
+import { environment } from '../../../../../../environments/environment';
 
 
 @Component({
@@ -23,7 +24,7 @@ export class CreateAccountComponent {
 
   onSubmit() {
     debugger
-    this.http.post<any>('https://localhost:7047/api/MyDCBank/createaccount', this.accObj)
+    this.http.post<any>(`${environment.apiUrl}api/MyDCBank/createaccount`, this.accObj)
     .subscribe((res: any) => {
       debugger
       if(res){
@@ -48,7 +49,7 @@ fetchCustomerId() {
     return;
   }
   
-  this.http.get<any>(`https://localhost:7047/api/RepositoryServices/FindUser?userName=${this.findUser.userName}`)
+  this.http.get<any>(`${environment.apiUrl}api/RepositoryServices/FindUser?userName=${this.findUser.userName}`)
     .subscribe((res: any) => {
       if (res && res.customerID) {
         this.fetchedCustomerId = res.customerID;

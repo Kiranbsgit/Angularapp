@@ -3,6 +3,7 @@ import { CustomerViewModel } from '../../../../../Models/CustomerViewModel';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { environment } from '../../../../../../environments/environment';
 @Component({
   selector: 'app-my-profile',
   standalone: true,
@@ -37,7 +38,7 @@ export class MyProfileComponent {
 
   fetchUserDetails(customerID: number): void {
     // Make HTTP request to fetch user details from API
-    this.http.get<CustomerViewModel>(`https://localhost:7047/api/RepositoryServices/Customers?CustomerID=${customerID}`).subscribe(
+    this.http.get<CustomerViewModel>(`${environment.apiUrl}api/RepositoryServices/Customers?CustomerID=${customerID}`).subscribe(
       (user: CustomerViewModel) => {
         this.user = user;
       },
