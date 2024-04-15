@@ -1,6 +1,6 @@
 
 [build]
-  publish = "dist/mydcbank.ui"
+  publish = "dist/mydcbank.ui/browser"
   command = "ng build --configuration=production"
 [[redirects]]
   from = "/*"
