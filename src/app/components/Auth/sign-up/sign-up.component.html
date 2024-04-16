@@ -184,7 +184,7 @@
                         <div class="checkbox">
                             <label>
                                 <input type="checkbox" id="acceptTerms" name="acceptTerms"  required>
-                                I accept the <a href="#">Terms and Conditions</a>.
+                                I accept the <a style="color:rgb(0,0,57);" href="#">Terms and Conditions</a>.
                             </label>
                             <!-- Error message -->
                             <div *ngIf="signupForm.controls['acceptTerms'].invalid && signupForm.submitted" class="text-danger">
@@ -199,7 +199,7 @@
                         <button type="submit" class="btn btn-primary" [disabled]="!signupForm.controls['acceptTerms'].value">
                             Register
                         </button>
-                        <a style="padding-left: 15px;font-size: 10px;" href="/login">Already have an account?</a>
+                        <a style="padding-left: 15px;font-size: 20px;color:rgb(0,0,57);" href="/login">Already have an account?</a>
                     </div>
                 </div>
             </form> <!-- /form -->
